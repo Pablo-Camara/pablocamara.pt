@@ -13,6 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get(trans('routes.language-selection'), function () {
     return view('language-selection');
-});
+})->name('language-selection');
+
+$supportedLanguages = config('app.supported_languages');
+foreach ($supportedLanguages as $language) {
+    Route::get($language, function () {
+        return view('home');
+    });
+
+    Route::get($language . '/' . trans('routes.about-me', [], $language), function () {
+        return view('about-me');
+    });
+}
