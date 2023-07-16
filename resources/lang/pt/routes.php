@@ -1,6 +1,7 @@
 <?php
 
 return [
-    'language-selection' => 'idioma',
+    'language-selection' => '/',
+    'home' => 'pagina-inicial',
     'about-me' => 'sobre-mim'
 ];

@@ -1,6 +1,7 @@
 <?php
 
 return [
-    'language-selection' => 'language',
+    'language-selection' => '/',
+    'home' => 'home',
     'about-me' => 'about-me'
 ];
