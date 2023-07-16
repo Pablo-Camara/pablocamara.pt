@@ -167,7 +167,7 @@
         </div>
 
         <div id="language-selector" style="display: none;">
-            <div class="language first-item" id="select-pt">
+            <div class="language first-item" id="ls-select-pt" data-language="pt">
               <div class="v-connector load-pt-v-conn start"></div>
               <div class="h-connector load-pt-h-conn start"></div>
               <div class="content load-pt-content start">
@@ -176,7 +176,7 @@
               </div>
             </div>
 
-            <div class="language second-item" id="select-en">
+            <div class="language second-item" id="ls-select-en" data-language="en">
               <div class="v-connector load-en-v-conn start"></div>
               <div class="h-connector load-en-h-conn start"></div>
               <div class="content load-en-content start">
@@ -186,7 +186,7 @@
             </div>
 
 
-            <div class="language third-item" id="select-es">
+            <div class="language third-item" id="ls-select-es" data-language="es">
               <div class="v-connector load-es-v-conn start"></div>
               <div class="h-connector load-es-h-conn start"></div>
               <div class="content load-es-content start">
@@ -201,7 +201,7 @@
           </div>
 
         <script type="text/javascript">
-            function toggleClassFromChildren(element, childrenTagNames, oldClass, newClass, extraOptions) {
+            function toggleClassFromChildren (element, childrenTagNames, oldClass, newClass, extraOptions) {
               var totalReplaces = 0;
               for (var x = 0; x < childrenTagNames.length; x++) {
                 var childrenToChange = element.getElementsByTagName(childrenTagNames[x]);
@@ -233,7 +233,7 @@
 
             var languageSelectionTotalTransitionsEnded = 0;
             var languageSelectionAddedTransitionEndListener = false;
-            function animateLanguageSelection(show, callbackHidingLanguageSelection) {
+            function animateLanguageSelection (show, callbackHidingLanguageSelection) {
                 var languageSelector = document.getElementById('language-selector');
                 languageSelector.style.display = 'block';
                 var oldClass = show ? 'start' : 'end';
@@ -267,14 +267,44 @@
                 }, 100);
             }
 
-            setTimeout(function (show = true) {
+            setTimeout (function (show = true) {
                 var pabloCamara = document.getElementById('pablocamara');
                 var oldClass = show ? 'start' : 'end';
                 var newClass = show ? 'end' : 'start';
                 toggleClassFromChildren(pabloCamara, ['div'], oldClass, newClass);
 
-                animateLanguageSelection(true);
+                animateLanguageSelection(true, function() {
+                    if (
+                        typeof chosenLanguage === 'undefined'
+                        ||
+                        !chosenLanguage
+                    ) {
+                        chosenLanguage = defaultLanguage;
+                    }
+                    window.location.href = '/' + chosenLanguage;
+                });
             }, 100);
+
+            var chosenLanguage = null;
+            var defaultLanguage = 'pt';
+            function setupSelectLanguageEvents() {
+                const languageElIds = [
+                    'ls-select-pt',
+                    'ls-select-es',
+                    'ls-select-en'
+                ];
+
+                for (var lEli = 0; lEli < languageElIds.length; lEli++) {
+                    const languageSelectionItem = document.getElementById(languageElIds[lEli]);
+                    languageSelectionItem.onclick = function (e) {
+                        chosenLanguage = e.currentTarget.getAttribute('data-language');
+                        animateLanguageSelection(false);
+                    };
+                }
+            }
+
+            setupSelectLanguageEvents();
+
         </script>
     </body>
 </html>
