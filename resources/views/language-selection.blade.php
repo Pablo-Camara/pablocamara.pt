@@ -233,7 +233,7 @@
 
             var languageSelectionTotalTransitionsEnded = 0;
             var languageSelectionAddedTransitionEndListener = false;
-            function animateLanguageSelection(show) {
+            function animateLanguageSelection(show, callbackHidingLanguageSelection) {
                 var languageSelector = document.getElementById('language-selector');
                 languageSelector.style.display = 'block';
                 var oldClass = show ? 'start' : 'end';
@@ -249,6 +249,9 @@
                                 // TODO: Grab total transitions dynamically
                                 if (languageSelectionTotalTransitionsEnded >= 25) {
                                     languageSelector.style.display = 'none';
+                                    if (typeof callbackHidingLanguageSelection === 'function') {
+                                        callbackHidingLanguageSelection();
+                                    }
                                 }
                             }
                         };
