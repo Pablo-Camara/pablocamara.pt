@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'locale' => 'pt',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -97,6 +97,19 @@ return [
     */
 
     'fallback_locale' => 'en',
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Supported languages
+    |--------------------------------------------------------------------------
+    |
+    | The supported languages by the website
+    | this is used to generate routes for the differently supported languages
+    | helps the URLs being SEO friendly, and sharable in the proper language
+    |
+    */
+    'supported_languages' => ['en', 'pt', 'es'],
 
     /*
     |--------------------------------------------------------------------------
