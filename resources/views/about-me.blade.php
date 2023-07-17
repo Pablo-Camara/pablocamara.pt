@@ -208,43 +208,43 @@
                 <img id="profile-picture-img" data-profile-picture="0" src="assets/img/profile-picture-1.jpeg">
             </div>
 
-            <h2>About me</h2>
+            <h2>{{ trans('pages.about-me.about_me') }}</h2>
             <div>
-                I'm first of all, a human being, a friend and an eternal student of life.
+                {{ trans('pages.about-me.about_me_text') }}
                 <br/><br/>
             </div>
-            <h3>My interest in technology</h3>
+            <h3>{{ trans('pages.about-me.my_interest_in_tech') }}</h3>
             <div>
-                At some point, very early in my life, around 12, I had my first, much desired computer, until then, I had only seen my friends use such a machine, and sometimes had the privilege of playing games with them in their computers.
+                {{ trans('pages.about-me.my_interest_in_tech_txt_1') }}
                 <br><br/>
-                Since the first day I received my first computer, the interest was high, and soon I was exploring computer configurations, local offline games and anything I could click on... and of course it did not take long until I discovered the internet!
+                {{ trans('pages.about-me.my_interest_in_tech_txt_2') }}
                 <br/><br/>
             </div>
-            <h3>Evolving with the Internet</h3>
+            <h3>{{ trans('pages.about-me.evolving_with_the_internet') }}</h3>
             <div>
-                Since I've discovered the internet I started digging deep into the worlds of information.
+                {{ trans('pages.about-me.evolving_with_the_internet_txt_1') }}
                 <br/><br/>
-                I soon found out I enjoyed reading and learning and also creating and sharing digital content.
+                {{ trans('pages.about-me.evolving_with_the_internet_txt_2') }}
                 <br><br/>
-                God only knows how much information / software I've explored since I found out the internet!
+                {{ trans('pages.about-me.evolving_with_the_internet_txt_3') }}
                 <br/><br/>
             </div>
-            <h3>Becoming a professional</h3>
+            <h3>{{ trans('pages.about-me.becoming_a_pro') }}</h3>
             <div>
-                It did not only take countless hours of freely and randomly exploring subjects on my machine but I also went through 2 different IT courses during my academic education.
+                {{ trans('pages.about-me.becoming_a_pro_txt_1') }}
                 <br><br/>
-                One of them - Installation and Operation of Informatic Systems - with the duration of 2 years , and another one - Managing and Programming Informatic Systems - with the duration of 3 years.
+                {{ trans('pages.about-me.becoming_a_pro_txt_2') }}
                 <br/><br/>
-                I started working officially just after finishing the second course, and I have been working for different companies since then.. I have more than 10 years of experience as a web developer!
+                {{ trans('pages.about-me.becoming_a_pro_txt_3') }}
                 <br/><br/>
             </div>
-            <h3>Other interests</h3>
+            <h3>{{ trans('pages.about-me.other_interests') }}</h3>
             <div>
-                Outside the IT world, I have a deep attraction for sports and nature.
+                {{ trans('pages.about-me.other_interests_txt_1') }}
                 <br/><br/>
-                One of my favorite sports is Calisthenics / Street Workout, which is basically gymnastics / working out with our own bodyweight.
+                {{ trans('pages.about-me.other_interests_txt_2') }}
                 <br/><br/>
-                You can check out below some "special" bodyweight exercises I've got in my bag
+                {{ trans('pages.about-me.other_interests_txt_3') }}
                 <br/><br/>
                 <div class="video-container" style="text-align: center">
                     <video id="videoPlayer" style="max-width: 320px" controls>
@@ -252,15 +252,14 @@
                         <!-- Add additional <source> tags for other video formats if needed -->
                     </video>
                     <br>
-                    ( by the way, I have sped up the video )
+                    {{ trans('pages.about-me.other_interests_txt_4') }}
                 </div>
                 <br/><br/>
-                I've also had the privilege of participating in / practicing Martials Arts throughout my life, and I love watching UFC!
+                {{ trans('pages.about-me.other_interests_txt_5') }}
                 <br/><br/>
-                I enjoy wheels...I don't have my driver's license yet but I do enjoy alot riding my BMX or my skate sometimes.. Roller skating is cool too!
-                I've also had the privilege of trying skiing in the past and it was quite an experience!
+                {{ trans('pages.about-me.other_interests_txt_6') }}
                 <br/><br/>
-                heres a video of me skating around / pedaling:
+                {{ trans('pages.about-me.other_interests_txt_7') }}
                 <br/><br/>
                 <div class="video-container" style="text-align: center">
                     <video id="videoPlayer" style="max-width: 320px" controls>
@@ -269,9 +268,9 @@
                     </video>
                 </div>
                 <br/><br/>
-                I also love the sea, specially when there are nice waves around to catch! I have no surf board but I can catch them with my own body!
+                {{ trans('pages.about-me.other_interests_txt_8') }}
                 <br/><br/>
-                Well that is just the tip of the iceberg, there is alot of things in this life that I enjoy, it is not worth mentioning them all..I will just keep on living and trying my best to enjoy life as much as I can in the best possible way! - and - I hope you can do that too!!
+                {{ trans('pages.about-me.other_interests_txt_9') }}
                 <br/><br/>
             </div>
         </div>
@@ -295,31 +294,10 @@
             </div>
         </div> -->
 
+        <script type="text/javascript" src="{{ asset('assets/js/helpers.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/js/pablocamara-loader-2.js') }}"></script>
+
         <script type="text/javascript">
-            function toggleClassFromChildren(element, childrenTagNames, oldClass, newClass, extraOptions) {
-              var totalReplaces = 0;
-              for (var x = 0; x < childrenTagNames.length; x++) {
-                var childrenToChange = element.getElementsByTagName(childrenTagNames[x]);
-                for (var i = 0; i < childrenToChange.length; i++) {
-                  if (!childrenToChange[i].classList.contains(oldClass)) {
-                    continue;
-                  }
-                  childrenToChange[i].classList.replace(oldClass, newClass);
-                  totalReplaces++;
-                }
-              }
-              return totalReplaces;
-            };
-
-
-            setTimeout(function (show = true) {
-                var pabloCamara = document.getElementById('pablocamara');
-                var oldClass = show ? 'start' : 'end';
-                var newClass = show ? 'end' : 'start';
-                toggleClassFromChildren(pabloCamara, ['div'], oldClass, newClass);
-            }, 100);
-
-
             setInterval(function() {
                 var pictures = [
                     'assets/img/profile-picture-1.jpeg',
