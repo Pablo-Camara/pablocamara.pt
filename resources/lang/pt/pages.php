@@ -22,7 +22,7 @@ return [
         'other_interests' => 'Outros interesses',
         'other_interests_txt_1' => 'Fora do mundo de TI, tenho uma profunda atração por esportes e natureza.',
         'other_interests_txt_2' => 'Um dos meus esportes favoritos é a Calistenia / Street Workout, que é basicamente ginástica / treinar com o peso do próprio corpo.',
-        'other_interests_txt_3' => 'Pode ver abaixo alguns exercícios de peso corporal "especiais" que tenho guardados na minha mochila',
+        'other_interests_txt_3' => 'Abaixo podemos ver alguns exercícios de peso corporal "especiais" que tenho guardados na minha mochila',
         'other_interests_txt_4' => '( a propósito, eu acelerei o vídeo )',
         'other_interests_txt_5' => 'Também tive o privilégio de participar/praticar Artes Marciais ao longo da minha vida, um pouco de kickboxing, um pouco de jiu jitsu, um pouco de capoeira... e adoro assistir UFC!',
         'other_interests_txt_6' => 'Eu gosto de rodas...eu não tenho ainda a minha carta de condução, mas eu gosto de andar de BMX ou de skate às vezes.. Patins também são divertidos! Eu também tive o privilégio de esquiar no passado e foi uma experiência e tanto!',
