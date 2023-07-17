@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,16 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get(trans('routes.language-selection'), function () {
+    $selectedLanguage = request()->cookie('selected-language');
+    if (!empty($selectedLanguage)) {
+        return redirect()->route('home-' . $selectedLanguage);
+    }
     return view('language-selection');
 })->name('language-selection');
 
 $supportedLanguages = config('app.supported_languages');
 foreach ($supportedLanguages as $language) {
-    Route::get($language, function () {
-        return view('home');
-    });
+    Route::get($language, [HomeController::class, 'homePage'])->name('home-' . $language);
 
     Route::get($language . '/' . trans('routes.about-me', [], $language), function () {
         return view('about-me');
-    });
+    })->name('about-me-' . $language);
 }
