@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Middleware\LanguageMiddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,19 +15,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get(trans('routes.language-selection'), function () {
+$supportedLanguages = config('app.supported_languages');
+
+Route::get(trans('routes.language-selection'), function () use ($supportedLanguages) {
     $selectedLanguage = request()->cookie('selected-language');
-    if (!empty($selectedLanguage)) {
-        return redirect()->route('home-' . $selectedLanguage);
+    if (
+        !empty($selectedLanguage)
+        &&
+        in_array($selectedLanguage, $supportedLanguages)
+    ) {
+        return redirect()->route(trans('routes.home', [], $selectedLanguage));
     }
     return view('language-selection');
 })->name('language-selection');
 
-$supportedLanguages = config('app.supported_languages');
-foreach ($supportedLanguages as $language) {
-    Route::get($language, [HomeController::class, 'homePage'])->name('home-' . $language);
+Route::middleware([LanguageMiddleware::class])->group(function () use ($supportedLanguages) {
+    foreach ($supportedLanguages as $language) {
+        Route::get($language, [HomeController::class, 'homePage'])
+            ->name(trans('routes.home', [], $language));
 
-    Route::get($language . '/' . trans('routes.about-me', [], $language), function () {
-        return view('about-me');
-    })->name('about-me-' . $language);
-}
+        Route::get($language . '/' . trans('routes.about-me', [], $language), function () {
+            return view('about-me');
+        })->name(trans('routes.about-me', [], $language));
+    }
+});
