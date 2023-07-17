@@ -3,7 +3,7 @@
     <div id="about-me-container"
         class="section about-me-container">
         <div class="profile-picture">
-            <img id="profile-picture-img" data-profile-picture="0" src="assets/img/profile-picture-1.jpeg">
+            <img id="profile-picture-img" data-profile-picture="0" src="{{ $profilePictures[0] }}">
         </div>
 
         <h2>{{ trans('pages.about-me.about_me') }}</h2>
