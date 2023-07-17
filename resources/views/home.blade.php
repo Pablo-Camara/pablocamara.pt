@@ -228,29 +228,7 @@
             </div>
         </div> -->
 
-        <script type="text/javascript">
-            function toggleClassFromChildren(element, childrenTagNames, oldClass, newClass, extraOptions) {
-              var totalReplaces = 0;
-              for (var x = 0; x < childrenTagNames.length; x++) {
-                var childrenToChange = element.getElementsByTagName(childrenTagNames[x]);
-                for (var i = 0; i < childrenToChange.length; i++) {
-                  if (!childrenToChange[i].classList.contains(oldClass)) {
-                    continue;
-                  }
-                  childrenToChange[i].classList.replace(oldClass, newClass);
-                  totalReplaces++;
-                }
-              }
-              return totalReplaces;
-            };
-
-
-            setTimeout(function (show = true) {
-                var pabloCamara = document.getElementById('pablocamara');
-                var oldClass = show ? 'start' : 'end';
-                var newClass = show ? 'end' : 'start';
-                toggleClassFromChildren(pabloCamara, ['div'], oldClass, newClass);
-            }, 100);
-        </script>
+        <script type="text/javascript" src="{{ asset('assets/js/helpers.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('assets/js/pablocamara-loader-2.js') }}"></script>
     </body>
 </html>
