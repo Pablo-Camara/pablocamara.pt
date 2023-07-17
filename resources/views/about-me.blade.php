@@ -200,14 +200,7 @@
             </div>
         </div>
 
-        <div class="menu" id="main-menu">
-            <a href="javascript:void(0);"
-                style="text-align: center; display: none"
-                class="menu-item" id="menu-toggler">MENU</a>
-            <a href="javascript:void(0);" class="menu-item" id="about-me-menu-item">About me</a>
-            <a href="#" class="menu-item">Projects</a>
-            <a href="#" class="menu-item">Contact</a>
-        </div>
+        @include('menus.main-menu')
 
         <div id="about-me-container"
             class="section about-me-container">
