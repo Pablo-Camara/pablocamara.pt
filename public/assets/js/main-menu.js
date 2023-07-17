@@ -13,5 +13,3 @@ function animateMainMenuItems(visible) {
         }, i * 800);
     }
 }
-
-animateMainMenuItems(true);

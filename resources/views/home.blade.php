@@ -6,4 +6,7 @@
 @section('scripts')
     @parent
 
+    <script type="text/javascript">
+        animateMainMenuItems(true);
+    </script>
 @endsection
