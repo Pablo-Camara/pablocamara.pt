@@ -105,6 +105,11 @@
                 color: #FFFFFF;
                 font-size: 14px;
             }
+
+            .centered-300 {
+                width: 300px;
+                margin: auto;
+            }
         </style>
     </head>
     <body>
@@ -191,28 +196,11 @@
             </div>
         </div>
 
-        @include('menus.main-menu')
+        @section('menu')
+            @include('menus.main-menu')
+        @show
 
         @yield('content')
-
-        <!-- <div class="section">
-            <h2>Latest projects</h2>
-            <div class="item-list">
-                <div class="item">
-                    <div class="item-image">
-                        <img src="assets/img/item1.png" />
-                    </div>
-                    <div class="item-title">URL Shortner</div>
-                </div>
-
-                <div class="item">
-                    <div class="item-image">
-                        <img src="assets/img/tictactoe.png" />
-                    </div>
-                    <div class="item-title">Tic Tac Toe game using object oriented native / vanilla javascript</div>
-                </div>
-            </div>
-        </div> -->
 
         @section('scripts')
             <script type="text/javascript" src="{{ asset('assets/js/helpers.js') }}"></script>

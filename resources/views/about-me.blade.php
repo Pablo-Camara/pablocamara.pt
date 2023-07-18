@@ -1,4 +1,7 @@
 @extends('layouts.main')
+@section('menu')
+    @include('menus.back-to-main-menu')
+@endsection
 @section('content')
     <div id="about-me-container"
         class="section about-me-container">
