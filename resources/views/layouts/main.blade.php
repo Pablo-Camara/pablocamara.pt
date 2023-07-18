@@ -113,6 +113,10 @@
                 margin: auto;
             }
         </style>
+
+        @section('styles')
+
+        @show
     </head>
     <body>
         <div class="header">
