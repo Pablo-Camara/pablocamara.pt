@@ -87,6 +87,8 @@
                 min-width: 300px;
                 min-height: 180px;
                 margin-bottom: 12px;
+                display: block;
+                text-decoration: none;
             }
 
             .item-list .item .item-image {
