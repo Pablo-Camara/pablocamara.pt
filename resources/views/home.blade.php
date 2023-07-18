@@ -20,7 +20,8 @@
     @parent
 
     <script type="text/javascript">
-        animateMainMenuItems(true, function () {
+        const hasAnimatedMainMenuOnce = {!! $hasAnimatedMainMenuOnce !!};
+        animateMainMenuItems(true, hasAnimatedMainMenuOnce ? 300 : 600, function () {
             const homeCopyright = document.getElementById('home-copyright');
             homeCopyright.style.display = 'block';
 

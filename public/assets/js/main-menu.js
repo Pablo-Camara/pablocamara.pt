@@ -1,7 +1,7 @@
-function animateMainMenuItems(visible, callbackAfter) {
+function animateMainMenuItems(visible, msTimeInBetween, callbackAfter) {
     const mainMenu = document.getElementById('main-menu');
     const mainMenuItems = mainMenu.getElementsByTagName('a');
-    const msTimeInBetween = 600;
+
     if (typeof callbackAfter === 'function') {
         setTimeout (function() {
             callbackAfter();
