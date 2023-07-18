@@ -3,5 +3,6 @@
 return [
     'language-selection' => '/',
     'home' => 'pagina-principal',
-    'about-me' => 'sobre-mi'
+    'about-me' => 'sobre-mi',
+    'projects' => 'proyectos',
 ];

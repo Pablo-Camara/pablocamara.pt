@@ -37,5 +37,9 @@ Route::middleware([LanguageMiddleware::class])->group(function () use ($supporte
         Route::get($language . '/' . trans('routes.about-me', [], $language), function () {
             return view('about-me');
         })->name(trans('routes.about-me', [], $language));
+
+        Route::get($language . '/' . trans('routes.projects', [], $language), function () {
+            return view('projects');
+        })->name(trans('routes.projects', [], $language));
     }
 });
