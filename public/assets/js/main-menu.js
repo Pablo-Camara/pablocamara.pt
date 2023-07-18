@@ -21,3 +21,17 @@ function animateMainMenuItems(visible, msTimeInBetween, callbackAfter) {
         }, i * msTimeInBetween);
     }
 }
+
+function setupMenuItemOnClick() {
+    const mainMenu = document.getElementById('main-menu');
+    const mainMenuItems = mainMenu.getElementsByTagName('a');
+
+
+    for (var i = 1; i <= mainMenuItems.length; i++) {
+        const mainMenuItem = mainMenuItems[i-1];
+        mainMenuItem.onclick = function () {
+            animatePabloCamaraLoader(false);
+        };
+    }
+}
+setupMenuItemOnClick();
