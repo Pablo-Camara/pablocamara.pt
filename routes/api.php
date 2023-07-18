@@ -1,10 +1,11 @@
 <?php
 
+use App\Http\Controllers\MenuController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
-|--------------------------------------------------------------------------
+|-------------------------------------------------ed--------------------------
 | API Routes
 |--------------------------------------------------------------------------
 |
@@ -17,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('has-animated-main-menu-once', [MenuController::class, 'hasAnimatedMainMenuOnce'])
+    ->name('has-animated-main-menu-once');

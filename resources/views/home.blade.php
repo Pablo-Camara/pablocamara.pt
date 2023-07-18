@@ -23,6 +23,13 @@
         animateMainMenuItems(true, function () {
             const homeCopyright = document.getElementById('home-copyright');
             homeCopyright.style.display = 'block';
+
+            // notify user has seen slower speed menu animation once
+            const endpointHasAnimatedMainMenuOnce = "{!! route('has-animated-main-menu-once') !!}";
+            var xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+            xhr.open("GET", endpointHasAnimatedMainMenuOnce);
+            xhr.send();
         });
     </script>
 @endsection
