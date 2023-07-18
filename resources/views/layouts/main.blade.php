@@ -209,9 +209,9 @@
         @yield('content')
 
         @section('scripts')
-            <script type="text/javascript" src="{{ asset('assets/js/helpers.js') }}"></script>
-            <script type="text/javascript" src="{{ asset('assets/js/pablocamara-loader-2.js') }}"></script>
-            <script type="text/javascript" src="{{ asset('assets/js/main-menu.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('assets/js/helpers.js') }}?v=1"></script>
+            <script type="text/javascript" src="{{ asset('assets/js/pablocamara-loader-2.js') }}?v=1"></script>
+            <script type="text/javascript" src="{{ asset('assets/js/main-menu.js') }}?v=6"></script>
         @show
     </body>
 </html>

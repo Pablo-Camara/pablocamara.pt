@@ -29,8 +29,12 @@ function setupMenuItemOnClick() {
 
     for (var i = 1; i <= mainMenuItems.length; i++) {
         const mainMenuItem = mainMenuItems[i-1];
-        mainMenuItem.onclick = function () {
+        mainMenuItem.onclick = function (e) {
+            e.preventDefault();
             animatePabloCamaraLoader(false);
+            setTimeout(function() {
+                window.location.href = e.target.getAttribute('href');
+            }, 1900);
         };
     }
 }
