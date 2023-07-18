@@ -20,6 +20,8 @@ $supportedLanguages = config('app.supported_languages');
 Route::get(trans('routes.language-selection'), function () use ($supportedLanguages) {
     $selectedLanguage = request()->cookie('selected-language');
     if (
+        false == request()->has('lang')
+        &&
         !empty($selectedLanguage)
         &&
         in_array($selectedLanguage, $supportedLanguages)
