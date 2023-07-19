@@ -12,6 +12,20 @@
                 </div>
                 <div class="item-title">Will Shorten URLs - URL Shortner em Português - wsu.pt</div>
             </a>
+
+            <a href="https://pablocamara-template-2.camara.pt/" target="_blank" class="item">
+                <div class="item-image">
+                    <img src="{{ asset('assets/img/pablocamara-template-2.png') }}" />
+                </div>
+                <div class="item-title">Pablo Câmara's personal website template draft number 2</div>
+            </a>
+
+            <a href="https://pablocamara-template-1.camara.pt/" target="_blank" class="item">
+                <div class="item-image">
+                    <img src="{{ asset('assets/img/pablocamara-template-1.png') }}" />
+                </div>
+                <div class="item-title">Pablo Câmara's personal website template draft number 1</div>
+            </a>
         </div>
     </div>
 @endsection
