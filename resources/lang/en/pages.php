@@ -29,5 +29,8 @@ return [
         'other_interests_txt_7' => 'heres a video of me skating around / pedaling:',
         'other_interests_txt_8' => 'I also love the sea, specially when there are nice waves around to catch! I have no surf board but I can catch them with my own body!',
         'other_interests_txt_9' => 'Well that is just the tip of the iceberg, there is alot of things in this life that I enjoy, it is not worth mentioning them all..I will just keep on living and trying my best to enjoy life as much as I can in the best possible way! - and - I hope you can do that too!!',
+    ],
+    'projects' => [
+        'projects' => 'Projects'
     ]
 ];

@@ -29,5 +29,8 @@ return [
         'other_interests_txt_7' => 'Aquí hay un video mío patinando / pedaleando:',
         'other_interests_txt_8' => 'También me encanta el mar, ¡especialmente cuando hay buenas olas para atrapar! ¡No tengo tabla de surf pero puedo atraparlos con mi propio cuerpo!',
         'other_interests_txt_9' => 'Bueno, eso es solo la punta del iceberg, hay muchas cosas en esta vida que disfruto, no vale la pena mencionarlas todas. Seguiré viviendo y haciendo mi mejor esfuerzo para disfrutar la vida tanto como pueda. la mejor manera posible! - y - ¡Espero que tú también puedas hacer eso!',
+    ],
+    'projects' => [
+        'projects' => 'Proyectos'
     ]
 ];
