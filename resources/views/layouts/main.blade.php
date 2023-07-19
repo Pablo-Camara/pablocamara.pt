@@ -91,6 +91,10 @@
                 text-decoration: none;
             }
 
+            .item-list .item:hover .item-title {
+                font-weight: bold;
+            }
+
             .item-list .item .item-image {
                 height: 142px;
                 overflow: hidden;
@@ -106,6 +110,7 @@
                 background-color: #00202b;
                 color: #FFFFFF;
                 font-size: 14px;
+                border-top: 1px solid #003142;
             }
 
             .centered-300 {
