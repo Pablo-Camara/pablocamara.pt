@@ -117,6 +117,23 @@
                 width: 300px;
                 margin: auto;
             }
+
+            #copyright-text {
+                display: block;
+                text-align: center;
+                color: #00202b;
+            }
+
+            #change-current-language {
+                display: block;
+                text-align: center;
+                padding: 20px;
+            }
+
+            #change-current-language img {
+                max-width: 30px;
+                cursor: pointer;
+            }
         </style>
 
         @section('styles')
@@ -213,10 +230,39 @@
 
         @yield('content')
 
+        @if ($viewName == 'home')
+        <div id="copyright-text" style="display: none">
+        @else
+        <div id="copyright-text">
+        @endif
+            Copyright @ {{ date('Y') }}
+        </div>
+
+        @if ($viewName == 'home')
+        <div id="change-current-language" style="display: none">
+        @else
+        <div id="change-current-language">
+        @endif
+            <img src="{{ asset('assets/img/flags/flag-'.app()->getLocale().'.png') }}" />
+        </div>
+
         @section('scripts')
             <script type="text/javascript" src="{{ asset('assets/js/helpers.js') }}?v=1"></script>
             <script type="text/javascript" src="{{ asset('assets/js/pablocamara-loader-2.js') }}?v=1"></script>
             <script type="text/javascript" src="{{ asset('assets/js/main-menu.js') }}?v=6"></script>
+
+            @if ($viewName != 'home')
+                <script type="text/javascript">
+                    const homeCopyright = document.getElementById('copyright-text');
+                    homeCopyright.style.display = 'block';
+
+                    const changeCurrentLanguage = document.getElementById('change-current-language');
+                    changeCurrentLanguage.style.display = 'block';
+                    changeCurrentLanguage.onclick = function () {
+                        window.location.href = "{!! route('language-selection', ['lang' => true]) !!}";
+                    };
+                </script>
+            @endif
         @show
     </body>
 </html>

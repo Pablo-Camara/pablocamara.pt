@@ -22,6 +22,10 @@ class ViewComposerServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        View::composer('*', function($view){
+            View::share('viewName', $view->getName());
+        });
+
         View::composer('home', HomeComposer::class);
         View::composer('about-me', AboutMeComposer::class);
     }

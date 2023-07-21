@@ -1,43 +1,12 @@
 @extends('layouts.main')
 
-@section('styles')
-    <style>
-        #home-copyright {
-            display: block;
-            text-align: center;
-            color: #00202b;
-        }
-
-        #change-current-language {
-            display: block;
-            text-align: center;
-            padding: 20px;
-        }
-
-        #change-current-language img {
-            max-width: 30px;
-            cursor: pointer;
-        }
-    </style>
-@endsection
-
-@section('content')
-    <div id="home-copyright" style="display: none">
-        Copyright @ {{ date('Y') }}
-    </div>
-
-    <div id="change-current-language" style="display: none">
-        <img src="{{ asset('assets/img/flags/flag-'.app()->getLocale().'.png') }}" />
-    </div>
-@endsection
-
 @section('scripts')
     @parent
 
     <script type="text/javascript">
         const hasAnimatedMainMenuOnce = {!! $hasAnimatedMainMenuOnce !!};
         animateMainMenuItems(true, hasAnimatedMainMenuOnce ? 300 : 600, function () {
-            const homeCopyright = document.getElementById('home-copyright');
+            const homeCopyright = document.getElementById('copyright-text');
             homeCopyright.style.display = 'block';
 
             const changeCurrentLanguage = document.getElementById('change-current-language');
