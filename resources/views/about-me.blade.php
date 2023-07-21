@@ -3,8 +3,8 @@
     @include('menus.back-to-main-menu')
 @endsection
 @section('content')
-    <div id="about-me-container"
-        class="section about-me-container">
+    <div id="basic-container"
+        class="section basic-container">
         <div class="profile-picture">
             <img id="profile-picture-img" data-profile-picture="0" src="{{ $profilePictures[0] }}">
         </div>

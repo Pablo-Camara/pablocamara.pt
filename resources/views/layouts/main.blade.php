@@ -65,7 +65,7 @@
                 padding: 10px;
             }
 
-            .section.about-me-container {
+            .section.basic-container {
                 max-width: 748px;
                 margin: auto;
             }
