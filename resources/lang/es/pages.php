@@ -32,5 +32,14 @@ return [
     ],
     'projects' => [
         'projects' => 'Proyectos'
+    ],
+    'contact' => [
+        'contact' => 'Contact',
+
+        'contact_txt_1' => 'Hola, si quieres contactarme por alguno de los siguientes motivos:',
+        'contact_reason_1' => 'Quiere contratarme para un proyecto o tarea específica',
+        'contact_reason_2' => 'Tiene preguntas sobre las habilidades que poseo (porque está buscando contratar)',
+        'contact_reason_3' => 'Tienes preguntas relacionadas con uno de mis proyectos.',
+        'contact_txt_2' => 'Entonces no dude en enviarme un correo electrónico a pablo@camara.pt o pablocamara1996@gmail.com, o incluso llamarme directamente a mi número de teléfono: +351 93 49 100 67 (responderé si es posible).'
     ]
 ];

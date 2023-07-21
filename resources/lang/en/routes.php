@@ -4,5 +4,6 @@ return [
     'language-selection' => '/',
     'home' => 'home',
     'about-me' => 'about-me',
-    'projects' => 'projects'
+    'projects' => 'projects',
+    'contact' => 'contact'
 ];

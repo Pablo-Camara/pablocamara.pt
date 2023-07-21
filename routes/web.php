@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Middleware\LanguageMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -43,5 +44,8 @@ Route::middleware([LanguageMiddleware::class])->group(function () use ($supporte
         Route::get($language . '/' . trans('routes.projects', [], $language), function () {
             return view('projects');
         })->name(trans('routes.projects', [], $language));
+
+        Route::get($language . '/' . trans('routes.contact', [], $language), [ContactController::class, 'index'])
+            ->name(trans('routes.contact', [], $language));
     }
 });

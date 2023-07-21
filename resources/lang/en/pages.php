@@ -32,5 +32,14 @@ return [
     ],
     'projects' => [
         'projects' => 'Projects'
+    ],
+    'contact' => [
+        'contact' => 'Contact',
+
+        'contact_txt_1' => 'Hello, if you want to contact me for any of the reasons below:',
+        'contact_reason_1' => 'You want to hire me for a specific project or task',
+        'contact_reason_2' => 'You have questions regarding what skills I possess (because you are looking to hire)',
+        'contact_reason_3' => 'You have questions related to one of my projects',
+        'contact_txt_2' => 'Then feel free to send me an email at pablo@camara.pt or pablocamara1996@gmail.com, or even call me directly on my phone number: +351 93 49 100 67 (I will answer if possible).'
     ]
 ];

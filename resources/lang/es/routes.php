@@ -5,4 +5,5 @@ return [
     'home' => 'pagina-principal',
     'about-me' => 'sobre-mi',
     'projects' => 'proyectos',
+    'contact' => 'contacto'
 ];

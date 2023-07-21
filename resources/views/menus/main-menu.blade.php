@@ -15,7 +15,9 @@
         style="display: none">
         {{ trans('menus.main-menu.projects') }}
     </a>
-    <a href="#" class="menu-item"
+    <a
+        href="{{ route(trans('routes.contact')) }}"
+        class="menu-item"
         style="display: none">
         {{ trans('menus.main-menu.contact') }}
     </a>
