@@ -83,10 +83,22 @@
                 margin-top: 8px;
             }
 
+            .item-list .item-container {
+                margin-bottom: 20px;
+            }
+
+            .item-list .item-container .item-details {
+                text-align: right;
+                font-size: 14px;
+            }
+
+            .item-list .item-container .item-details a {
+                color: #0d0d0d;
+            }
+
             .item-list .item {
                 min-width: 300px;
                 min-height: 180px;
-                margin-bottom: 12px;
                 display: block;
                 text-decoration: none;
             }
@@ -98,6 +110,12 @@
             .item-list .item .item-image {
                 height: 142px;
                 overflow: hidden;
+            }
+
+            @media (min-width: 626px) {
+                .item-list .item .item-image {
+                    height: unset;
+                }
             }
 
             .item-list .item .item-image img {
